@@ -16,6 +16,7 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
+  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000',
   admin: {
     user: Users.slug,
     importMap: {
@@ -25,14 +26,7 @@ export default buildConfig({
       titleSuffix: ' — Colegio San Miguel Arcángel',
     },
   },
-  collections: [
-    Users,
-    Media,
-    HeroSlides,
-    Noticias,
-    GalleryImages,
-    ContactMessages,
-  ],
+  collections: [Users, Media, HeroSlides, Noticias, GalleryImages, ContactMessages],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -45,10 +39,6 @@ export default buildConfig({
   }),
   sharp,
   plugins: [],
-  cors: [
-    process.env.FRONTEND_URL || 'http://localhost:5173',
-  ],
-  csrf: [
-    process.env.FRONTEND_URL || 'http://localhost:5173',
-  ],
+  cors: [process.env.FRONTEND_URL || 'http://localhost:5173'],
+  csrf: [process.env.FRONTEND_URL || 'http://localhost:5173'],
 })
