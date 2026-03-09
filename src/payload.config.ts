@@ -7,6 +7,10 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { HeroSlides } from './collections/HeroSlides'
+import { Noticias } from './collections/Noticias'
+import { GalleryImages } from './collections/GalleryImages'
+import { ContactMessages } from './collections/ContactMessages'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -17,8 +21,18 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    meta: {
+      titleSuffix: ' — Colegio San Miguel Arcángel',
+    },
   },
-  collections: [Users, Media],
+  collections: [
+    Users,
+    Media,
+    HeroSlides,
+    Noticias,
+    GalleryImages,
+    ContactMessages,
+  ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -31,4 +45,10 @@ export default buildConfig({
   }),
   sharp,
   plugins: [],
+  cors: [
+    process.env.FRONTEND_URL || 'http://localhost:5173',
+  ],
+  csrf: [
+    process.env.FRONTEND_URL || 'http://localhost:5173',
+  ],
 })
