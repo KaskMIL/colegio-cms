@@ -223,6 +223,10 @@ export interface Noticia {
   } | null;
   image?: (number | null) | Media;
   /**
+   * Nombre de quien escribe la noticia
+   */
+  author?: string | null;
+  /**
    * Solo las noticias publicadas se muestran en la web
    */
   published?: boolean | null;
@@ -421,6 +425,7 @@ export interface NoticiasSelect<T extends boolean = true> {
   excerpt?: T;
   content?: T;
   image?: T;
+  author?: T;
   published?: T;
   updatedAt?: T;
   createdAt?: T;

@@ -72,6 +72,15 @@ export const Noticias: CollectionConfig = {
       relationTo: 'media',
     },
     {
+      name: 'author',
+      label: 'Autor',
+      type: 'text',
+      defaultValue: 'Colegio San Miguel Arcángel',
+      admin: {
+        description: 'Nombre de quien escribe la noticia',
+      },
+    },
+    {
       name: 'published',
       label: 'Publicado',
       type: 'checkbox',
