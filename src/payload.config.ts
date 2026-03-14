@@ -5,13 +5,13 @@ import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
+import { Institucional } from './globals/Institucional'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { ContactMessages } from './collections/ContactMessages'
+import { GalleryImages } from './collections/GalleryImages'
 import { HeroSlides } from './collections/HeroSlides'
 import { Noticias } from './collections/Noticias'
-import { GalleryImages } from './collections/GalleryImages'
-import { ContactMessages } from './collections/ContactMessages'
-import { Institucional } from './globals/Institucional'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
