@@ -135,6 +135,13 @@ export interface UserAuthOperations {
  */
 export interface User {
   id: number;
+  firstName: string;
+  lastName: string;
+  fullName?: string | null;
+  /**
+   * Super Admin: acceso total. Admin: gestiona contenido y usuarios. Editor: solo crea y edita contenido.
+   */
+  role: 'superadmin' | 'admin' | 'editor';
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -370,6 +377,10 @@ export interface PayloadMigration {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  firstName?: T;
+  lastName?: T;
+  fullName?: T;
+  role?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
