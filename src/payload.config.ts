@@ -11,6 +11,7 @@ import { HeroSlides } from './collections/HeroSlides'
 import { Noticias } from './collections/Noticias'
 import { GalleryImages } from './collections/GalleryImages'
 import { ContactMessages } from './collections/ContactMessages'
+import { Institucional } from './globals/Institucional'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -27,6 +28,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, HeroSlides, Noticias, GalleryImages, ContactMessages],
+  globals: [Institucional],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
