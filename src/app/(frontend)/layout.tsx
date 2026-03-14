@@ -2,8 +2,8 @@ import React from 'react'
 import './styles.css'
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+  description: 'CMS Colegio San Miguel Arcángel',
+  title: 'CMS - Colegio San Miguel Arcángel',
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
@@ -11,6 +11,22 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 
   return (
     <html lang="en">
+      {/* <!-- Favicon principal (ICO para compatibilidad legacy) --> */}
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+      {/* <!-- Favicons PNG en diferentes tamaños --> */}
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+
+      {/* <!-- Apple Touch Icon (para iOS/Safari) --> */}
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+      {/* <!-- Android Chrome Icons --> */}
+      <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+      <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+
+      {/* <!-- Web App Manifest --> */}
+      <link rel="manifest" href="/site.webmanifest" />
       <body>
         <main>{children}</main>
       </body>

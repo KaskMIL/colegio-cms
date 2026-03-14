@@ -95,8 +95,12 @@ export interface Config {
     defaultIDType: number;
   };
   fallbackLocale: null;
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    institucional: Institucional;
+  };
+  globalsSelect: {
+    institucional: InstitucionalSelect<false> | InstitucionalSelect<true>;
+  };
   locale: null;
   widgets: {
     collections: CollectionsWidget;
@@ -495,6 +499,42 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * Contenido de la sección "Nuestra historia" en la página principal.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "institucional".
+ */
+export interface Institucional {
+  id: number;
+  sectionLabel?: string | null;
+  titleLine1: string;
+  titleLine2: string;
+  paragraph1: string;
+  paragraph2: string;
+  ctaText?: string | null;
+  ctaLink?: string | null;
+  image?: (number | null) | Media;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "institucional_select".
+ */
+export interface InstitucionalSelect<T extends boolean = true> {
+  sectionLabel?: T;
+  titleLine1?: T;
+  titleLine2?: T;
+  paragraph1?: T;
+  paragraph2?: T;
+  ctaText?: T;
+  ctaLink?: T;
+  image?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

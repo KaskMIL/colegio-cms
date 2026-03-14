@@ -26,6 +26,12 @@ export default buildConfig({
     meta: {
       titleSuffix: ' — Colegio San Miguel Arcángel',
     },
+    components: {
+      graphics: {
+        Logo: './components/Logo',
+        Icon: './components/Icon',
+      },
+    },
   },
   collections: [Users, Media, HeroSlides, Noticias, GalleryImages, ContactMessages],
   globals: [Institucional],

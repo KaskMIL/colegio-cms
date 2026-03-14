@@ -1,0 +1,21 @@
+/* ─── Colegio San Miguel Arcángel — Admin Theme (Dark) ─── */
+
+/* Verde institucional en elementos interactivos */
+[data-theme="dark"],
+[data-theme="light"] {
+  --theme-success-500: #016837;
+  --theme-success-600: #01522c;
+}
+
+/* Botones primarios verdes */
+.btn--style-primary,
+button[class*="primary"] {
+  background-color: #016837 !important;
+  border-color: #016837 !important;
+}
+
+.btn--style-primary:hover,
+button[class*="primary"]:hover {
+  background-color: #028a49 !important;
+  border-color: #028a49 !important;
+}
